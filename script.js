@@ -6,7 +6,7 @@ document.getElementById('fetch-pokemon').addEventListener('click', async () => {
     }
 
     try {
-        const response = await fetch(`http://127.0.0.1:5000/api/pokemon/${pokemonId}`);
+        const response = await fetch(`http://127.0.0.1:8080/api/pokemon/${pokemonId}`);
         if (!response.ok) {
             throw new Error('Échec de la récupération des données du Pokémon. Veuillez réessayer.');
         }
