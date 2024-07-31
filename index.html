@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex Discovery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="pokedex">
+        <div class="pokedex-header">
+            <h1>Pokédex</h1>
+        </div>
+        <div class="pokedex-body">
+            <input type="number" id="pokemon-id" placeholder="Entrez l'ID du Pokémon (1-151)" min="1" max="151">
+            <button id="fetch-pokemon">Obtenir Pokémon</button>
+            <div id="pokemon-info">
+                <h2 id="pokemon-name"></h2>
+                <img id="pokemon-image" src="" alt="Image du Pokémon">
+                <p id="pokemon-description"></p>
+                <p id="pokemon-characteristic"></p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
