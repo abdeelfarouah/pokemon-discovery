@@ -1,9 +1,11 @@
 from flask import Flask, jsonify, send_from_directory
-import requests
 from flask_cors import CORS
+import requests
 
 app = Flask(__name__, static_folder='pokemon-discovery')
-CORS(app, resources={r"/api/*": {"origins": "https://abdeelf902.github.io"}})
+
+# Configurer CORS pour permettre toutes les origines ou spécifiez des origines précises
+CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 @app.route('/')
 def serve_index():
@@ -13,21 +15,19 @@ def serve_index():
 def serve_static(path):
     return send_from_directory(app.static_folder, path)
 
-# Route pour gérer les demandes de favicon.ico
-@app.route('/favicon.ico')
-def favicon():
-    return send_from_directory(app.static_folder, 'favicon.ico')
-
 @app.route('/api/pokemon/<int:pokemon_id>', methods=['GET'])
 def get_pokemon(pokemon_id):
     if (pokemon_id < 1) or (pokemon_id > 151):
         return jsonify({'error': 'Invalid Pokémon ID. Please enter a value between 1 and 151.'}), 400
 
+    # Fetch Pokémon data
     response = requests.get(f'https://pokeapi.co/api/v2/pokemon/{pokemon_id}')
     if response.status_code != 200:
         return jsonify({'error': 'Failed to fetch Pokémon data. Please try again.'}), 500
 
     data = response.json()
+
+    # Fetch Pokémon species to get the description
     species_response = requests.get(f'https://pokeapi.co/api/v2/pokemon-species/{pokemon_id}')
     if species_response.status_code != 200:
         return jsonify({'error': 'Failed to fetch Pokémon species data. Please try again.'}), 500

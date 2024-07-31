@@ -1,77 +1,53 @@
-/* Reset some default browser styles for consistency */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
+/* Styles de base pour une meilleure présentation */
 body {
-    background-color: #f0f0f0;
-    color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    padding: 20px;
-}
-
-div {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    max-width: 400px;
-    width: 100%;
+    font-family: Arial, sans-serif;
     text-align: center;
-    border: 2px solid #ffcb05; /* Pokémon Yellow */
+    padding: 20px;
 }
 
-input[type="number"] {
-    width: calc(100% - 30px);
+h1 {
+    margin-bottom: 20px;
+}
+
+.pokemon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Ajuste la grille automatiquement */
+    gap: 10px;
+    justify-content: center;
+}
+
+.pokemon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ddd;
     padding: 10px;
-    margin-bottom: 10px;
-    border: 2px solid #3b4cca; /* Pokémon Blue */
     border-radius: 5px;
-    font-size: 16px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    cursor: pointer; /* Indique que l'élément est cliquable */
 }
 
-button {
-    background-color: #ff0000; /* Pokémon Red */
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #cc0000;
-}
-
-h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: #ffcb05; /* Pokémon Yellow */
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    border: 2px solid #3b4cca; /* Pokémon Blue */
-}
-
-p {
-    font-size: 16px;
+.pokemon-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
     margin-bottom: 10px;
 }
 
-#pokemon-characteristic {
+.pokemon-item h2 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.pokemon-item p {
+    font-size: 0.9em;
     color: #555;
-    font-style: italic;
+}
+
+.pokemon-description {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
 }
