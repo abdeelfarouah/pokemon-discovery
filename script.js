@@ -29,25 +29,33 @@ async function fetchKantoPokemon() {
             const type = document.createElement('p');
             type.textContent = `Type: ${pokemonData.types.map(t => t.type.name).join(', ')}`;
 
-            // Ajouter le nom, l'image et le type à l'élément
+            // Description du Pokémon (initialement cachée)
+            const description = document.createElement('div');
+            description.className = 'pokemon-description';
+
+            // Ajouter le nom, l'image, et le type à l'élément
             item.appendChild(img);
             item.appendChild(name);
             item.appendChild(type);
+            item.appendChild(description); // Ajouter la description à l'élément
 
             // Ajouter l'élément à la grille
             pokemonGrid.appendChild(item);
 
-            // Ajouter un gestionnaire de clic pour afficher la description
-            item.addEventListener('click', () => showPokemonDescription(pokemonData));
+            // Ajouter un gestionnaire de survol pour afficher la description
+            item.addEventListener('mouseover', async () => {
+                await showPokemonDescription(pokemonData, description);
+            });
+            item.addEventListener('mouseout', () => {
+                description.style.display = 'none'; // Cacher la description lorsqu'on sort de la carte
+            });
         }
     } catch (error) {
         console.error('There was a problem with the fetch operation:', error);
     }
 }
 
-async function showPokemonDescription(pokemonData) {
-    const descriptionElement = document.getElementById('pokemon-description');
-    
+async function showPokemonDescription(pokemonData, descriptionElement) {
     // Fetch Pokémon species to get the description
     try {
         const speciesResponse = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${pokemonData.id}`);
@@ -63,6 +71,7 @@ async function showPokemonDescription(pokemonData) {
             <p>${description}</p>
             <p><strong>Types:</strong> ${pokemonData.types.map(t => t.type.name).join(', ')}</p>
         `;
+        descriptionElement.style.display = 'block'; // Afficher la description
     } catch (error) {
         descriptionElement.innerHTML = `<p>There was a problem fetching the description: ${error.message}</p>`;
     }
