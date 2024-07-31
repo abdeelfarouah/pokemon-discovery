@@ -3,7 +3,7 @@ import requests
 from flask_cors import CORS
 
 app = Flask(__name__, static_folder='pokemon-discovery')
-CORS(app, resources={r"/api/*": {"origins": "*"}})
+CORS(app, resources={r"/api/*": {"origins": "https://abdeelf902.github.io"}})
 
 @app.route('/')
 def serve_index():
