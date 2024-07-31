@@ -21,9 +21,11 @@ document.getElementById('fetch-pokemon').addEventListener('click', async () => {
         document.getElementById('pokemon-image').src = data.image_url;
         document.getElementById('pokemon-image').alt = data.name;
         document.getElementById('pokemon-description').textContent = data.description;
-        document.getElementById('pokemon-characteristic').textContent = `Caractéristique : ${data.characteristic}`;
+        
+        // La caractéristique n'est plus disponible dans l'API Flask
+        // Vous pouvez supprimer ou modifier cette ligne en fonction de vos besoins
+        // document.getElementById('pokemon-characteristic').textContent = `Caractéristique : ${data.characteristic}`;
     } catch (error) {
         alert(error.message);
     }
 });
-
