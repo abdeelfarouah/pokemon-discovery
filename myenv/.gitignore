@@ -1,0 +1,98 @@
+# Environnements virtuels
+venv/
+ENV/
+env/
+.venv/
+
+# Fichiers et dossiers Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.pyd
+
+# Configurations de l'environnement et des IDE
+.env
+*.env
+.vscode/
+.idea/
+*.swp
+
+# Dossiers de logs
+logs/
+*.log
+
+# Bases de données locales
+*.sqlite3
+*.db
+
+# Fichiers de configuration sensibles
+config.py
+instance/
+
+# Déploiement sur Heroku
+*.build/
+*.deploy/
+*.pid
+.buildlog
+
+# Fichiers spécifiques aux systèmes d'exploitation
+.DS_Store
+Thumbs.db
+
+# Dépendances
+*.egg
+*.egg-info/
+dist/
+build/
+
+# JetBrains IDEs
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# PyCharm specific
+.idea/
+*.pyc
+.idea/*
+.idea/libraries
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/usage.statistics.xml
+.idea/dictionaries
+
+# VSCode specific
+.vscode/
+
+# Jupyter Notebook specific
+.ipynb_checkpoints
+
+# Flask instance folder
+instance/
+
+# Static files
+staticfiles/
+
+# Profiling data
+.prof
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Coverage reports
+htmlcov/
+.tox/
+.coverage
+.cache
+.nox/
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+nosetests.xml
+pylint.d/
+# Environnements Node.js
+node_modules/
