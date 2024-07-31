@@ -3,7 +3,7 @@ import requests
 from flask_cors import CORS
 
 app = Flask(__name__, static_folder='pokemon-discovery')
-CORS(app, resources={r"/api/*": {"origins": "*"}})  # Permettre CORS pour toutes les routes /api
+CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 @app.route('/')
 def serve_index():
@@ -12,6 +12,11 @@ def serve_index():
 @app.route('/<path:path>')
 def serve_static(path):
     return send_from_directory(app.static_folder, path)
+
+# Route pour gérer les demandes de favicon.ico
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(app.static_folder, 'favicon.ico')
 
 @app.route('/api/pokemon/<int:pokemon_id>', methods=['GET'])
 def get_pokemon(pokemon_id):
@@ -44,3 +49,4 @@ def get_pokemon(pokemon_id):
 
 if __name__ == '__main__':
     app.run(debug=True)
+
