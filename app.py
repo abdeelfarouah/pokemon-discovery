@@ -37,19 +37,10 @@ def get_pokemon(pokemon_id):
         'No description available.'
     )
 
-    # Fetch Pokémon characteristics
-    characteristic_response = requests.get(f'https://pokeapi.co/api/v2/characteristic/{pokemon_id}/')
-    characteristic = 'No characteristic available.'
-
-    if characteristic_response.status_code == 200:
-        characteristic_data = characteristic_response.json()
-        characteristic = characteristic_data.get('description', 'No characteristic available.')
-
     pokemon_info = {
         'name': data['name'],
         'image_url': data['sprites']['other']['official-artwork']['front_default'],
-        'description': description,
-        'characteristic': characteristic
+        'description': description
     }
 
     return jsonify(pokemon_info)
