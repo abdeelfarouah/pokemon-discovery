@@ -17,7 +17,8 @@ h1 {
 
 /* Grid container styling */
 .pokemon-grid {
-    display: ruby-text;    
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 items per line */
     gap: 20px;
     justify-content: center;
     margin: 20px auto; /* Center grid horizontally and add vertical margin */
@@ -72,7 +73,25 @@ h1 {
     }
 }
 
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .pokemon-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Adjust column size for smaller screens */
+        gap: 10px; /* Reduce gap between cards */
+    }
+
+    .pokemon-description {
+        max-width: 90%; /* Adjust max-width for smaller screens */
+        font-size: 14px; /* Smaller font size for better fit */
+    }
+}
+
 @media (max-width: 480px) {
+    .pokemon-grid {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); /* Adjust column size for very small screens */
+        gap: 5px; /* Reduce gap between cards */
+    }
+
     .pokemon-description {
         padding: 15px; /* Less padding on very small screens */
         font-size: 12px; /* Smaller font size for very small screens */
