@@ -3,7 +3,7 @@ import requests
 from flask_cors import CORS
 
 app = Flask(__name__, static_folder='pokemon-discovery')
-CORS(app)  # Pour permettre les requêtes Cross-Origin
+CORS(app)
 
 @app.route('/')
 def serve_index():
@@ -18,14 +18,11 @@ def get_pokemon(pokemon_id):
     if (pokemon_id < 1) or (pokemon_id > 151):
         return jsonify({'error': 'Invalid Pokémon ID. Please enter a value between 1 and 151.'}), 400
 
-    # Fetch Pokémon data
     response = requests.get(f'https://pokeapi.co/api/v2/pokemon/{pokemon_id}')
     if response.status_code != 200:
         return jsonify({'error': 'Failed to fetch Pokémon data. Please try again.'}), 500
 
     data = response.json()
-
-    # Fetch Pokémon species to get the description
     species_response = requests.get(f'https://pokeapi.co/api/v2/pokemon-species/{pokemon_id}')
     if species_response.status_code != 200:
         return jsonify({'error': 'Failed to fetch Pokémon species data. Please try again.'}), 500
