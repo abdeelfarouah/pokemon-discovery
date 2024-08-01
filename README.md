@@ -2,7 +2,7 @@
 
 ## Description
 
-Pokédex est une application web qui affiche les 151 premiers Pokémon de la région Kanto. En survolant chaque Pokémon, vous pouvez voir une description et les types du Pokémon.
+Pokédex version allegée qui affiche les 151 premiers Pokémon de la région Kanto. En survolant chaque Pokémon, vous pouvez voir une description et les types du Pokémon.
 
 ## Installation
 
