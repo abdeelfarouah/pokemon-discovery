@@ -6,7 +6,7 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
-} /* Add the closing curly brace */
+}
 
 /* Heading styling */
 h1 {
@@ -18,12 +18,26 @@ h1 {
 /* Grid container styling */
 .pokemon-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 items per line */
+    grid-template-columns: repeat(4, 1fr); /* 4 items per line by default */
     gap: 20px;
     justify-content: center;
     margin: 20px auto; /* Center grid horizontally and add vertical margin */
     padding: 20px; /* Add padding around the grid */
     max-width: 1200px; /* Set a max-width for large screens */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .pokemon-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 items per line on smaller screens */
+    }
+}
+
+/* Media query for even smaller screens */
+@media (max-width: 480px) {
+    .pokemon-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 items per line on even smaller screens */
+    }
 }
 
 /* Individual Pokémon card styling */
