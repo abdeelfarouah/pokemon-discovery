@@ -14,7 +14,10 @@ h1 {
     font-size: 2em;
     color: #333; /* Dark grey text for contrast */
 }
-
+img{
+    width: 150px;
+    height: 150px;
+}
 /* Grid container styling */
 .pokemon-grid {
     display: grid;
