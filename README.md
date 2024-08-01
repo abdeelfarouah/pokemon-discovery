@@ -8,8 +8,8 @@ Pokédex est une application web qui affiche les 151 premiers Pokémon de la ré
 
 1. Clonez le dépôt :
     ```bash
-    git clone https://github.com/votre-utilisateur/pokedex.git
-    cd pokedex
+    git clone https://github.com/votre-utilisateur/pokeemon-discovery.git
+    cd pokemon-discovery
     ```
 2. Ouvrez `index.html` dans votre navigateur.
 
