@@ -6,7 +6,7 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
-}
+} /* Add the closing curly brace */
 
 /* Heading styling */
 h1 {
@@ -60,40 +60,4 @@ h1 {
     overflow: auto; /* Allow scrolling if content overflows */
 }
 
-/* Responsive design adjustments */
-@media (max-width: 768px) {
-    .pokemon-grid {
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Adjust column size for smaller screens */
-        gap: 10px; /* Reduce gap between cards */
-    }
-
-    .pokemon-description {
-        max-width: 90%; /* Adjust max-width for smaller screens */
-        font-size: 14px; /* Smaller font size for better fit */
-    }
-}
-
-/* Responsive design adjustments */
-@media (max-width: 768px) {
-    .pokemon-grid {
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Adjust column size for smaller screens */
-        gap: 10px; /* Reduce gap between cards */
-    }
-
-    .pokemon-description {
-        max-width: 90%; /* Adjust max-width for smaller screens */
-        font-size: 14px; /* Smaller font size for better fit */
-    }
-}
-
-@media (max-width: 480px) {
-    .pokemon-grid {
-        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); /* Adjust column size for very small screens */
-        gap: 5px; /* Reduce gap between cards */
-    }
-
-    .pokemon-description {
-        padding: 15px; /* Less padding on very small screens */
-        font-size: 12px; /* Smaller font size for very small screens */
-    }
 }
