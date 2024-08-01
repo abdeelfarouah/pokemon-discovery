@@ -59,5 +59,3 @@ h1 {
     z-index: 2; /* Ensure it’s on top of other elements */
     overflow: auto; /* Allow scrolling if content overflows */
 }
-
-}
