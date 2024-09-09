@@ -44,6 +44,7 @@ Copier le code
 1. Forkez le projet.
 2. Créez une branche pour vos changements.
 3. Envoyez une Pull Request.
+Pour des questions, ouvrez une issue sur GitHub.
 
 ## Licence
 
@@ -51,4 +52,4 @@ Copier le code
 
 ---
 
-Pour des questions, ouvrez une issue sur GitHub.
+
