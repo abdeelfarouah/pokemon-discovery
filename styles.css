@@ -111,6 +111,34 @@ img {
     visibility: hidden;
     transition: opacity 0.4s ease, visibility 0s linear 0.4s;
 }
+ .pokemon-item {
+            width: 200px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+            position: relative;
+        }
+
+        .pokemon-description {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            width: 250px;
+        }
+
+        #pokemon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
 
 .pokemon-description.show {
     opacity: 1;
