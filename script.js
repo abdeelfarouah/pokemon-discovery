@@ -1,5 +1,10 @@
 // Fonction pour obtenir un Pokémon par son ID
 async function fetchPokemonById(pokemonId) {
+    if (pokemonId < 1 || pokemonId > 151) {
+        alert('Veuillez entrer un ID valide (1-151).');
+        return;
+    }
+
     try {
         // Récupération des informations de base du Pokémon
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`);
@@ -32,7 +37,7 @@ async function fetchPokemonById(pokemonId) {
 
 // Ajout de l'écouteur d'événement sur le bouton
 document.getElementById('fetch-pokemon').addEventListener('click', () => {
-    const pokemonId = document.getElementById('pokemon-id').value;
+    const pokemonId = parseInt(document.getElementById('pokemon-id').value, 10);
     if (pokemonId) {
         fetchPokemonById(pokemonId);
     } else {
