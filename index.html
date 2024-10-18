@@ -7,10 +7,31 @@
     <link rel="stylesheet" href="styles.css"> <!-- Lien vers le CSS -->
 </head>
 <body>
-    <h1>Pokédex</h1>
-    <div id="pokemon-grid" class="pokemon-grid"></div>
-    <div id="pokemon-description" class="pokemon-description"></div> <!-- Section pour la description -->
-    <script src="script.js"></script>  <!-- Inclusion du script JS -->
+    <div class="pokedex">
+        <div class="pokedex-header">
+            <h1>Pokédex</h1>
+        </div>
+        <div class="pokedex-body">
+            <input type="number" id="pokemon-id" placeholder="Entrez l'ID du Pokémon (1-151)" min="1" max="151">
+            <button id="fetch-pokemon">Obtenir Pokémon</button>
+            <div id="pokemon-info">
+                <h2 id="pokemon-name"></h2>
+                <img id="pokemon-image" src="" alt="Image du Pokémon">
+                <p id="pokemon-description"></p>
+                <p id="pokemon-characteristic"></p>
+            </div>
+        </div>
+    <div>
+        <input type="number" id="pokemon-id" placeholder="Entrez l'ID du Pokémon">
+        <button id="fetch-pokemon">Rechercher</button>
+    </div>
+    <div>
+        <h2 id="pokemon-name"></h2>
+        <img id="pokemon-image" src="" alt="Image du Pokémon">
+        <p id="pokemon-description"></p>
+        <p id="pokemon-characteristic"></p>
+    </div>
+    <script src="script.js"></script>
 </body>
 <footer>
     <p>© Pokémon et tous les noms respectifs sont des marques déposées de The Pokémon Company International, Game Freak et Nintendo.</p>
