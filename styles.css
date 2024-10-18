@@ -1,135 +1,102 @@
-/* General body styling */
+/* Style général du corps */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0; /* Light grey background for better contrast */
-    color: #333; /* Dark grey text for readability */
-    font-size: 16px; /* Taille de police par défaut */
-    line-height: 1.6; /* Meilleur espacement entre les lignes */
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0; /* Gris clair pour le fond général */
     margin: 0;
     padding: 0;
     text-align: center;
 }
 
-/* Heading styling */
-h1 {
-    margin-top: 20px;
-    font-size: 2.5em; /* Accentuer la taille du titre */
-    margin-bottom: 30px; /* Ajouter de l'espace sous le titre */
-    color: #333; /* Dark grey text for contrast */
+/* Style de la zone principale du Pokédex */
+.pokedex {
+    background-color: #ffcb05; /* Jaune vif pour l'univers Pokémon */
+    border: 5px solid #3b4cca; /* Bordure bleue Pokémon */
+    border-radius: 20px;
+    padding: 20px;
+    max-width: 600px;
+    margin: 20px auto;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-img {
-    width: 150px;
-    height: 150px;
-    transition: transform 0.3s ease-in-out; /* Transition fluide */
+/* Style pour le header du Pokédex */
+.pokedex-header h1 {
+    color: #3b4cca; /* Bleu pour le titre du Pokédex */
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
 }
 
-/* Grid container styling */
-.pokemon-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 items per line by default */
-    gap: 20px;
-    justify-content: center;
-    margin: 20px auto; /* Center grid horizontally and add vertical margin */
-    padding: 20px; /* Add padding around the grid */
-    max-width: 1200px; /* Set a max-width for large screens */
+/* Style pour le champ d'entrée et le bouton */
+.pokedex-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Media query for smaller screens */
-@media (max-width: 768px) {
-    .pokemon-grid {
-        grid-template-columns: repeat(3, 1fr); /* 3 items per line on smaller screens */
-    }
-}
-
-/* Media query for even smaller screens */
-@media (max-width: 480px) {
-    .pokemon-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 items per line on even smaller screens */
-    }
-}
-
-/* Individual Pokémon card styling */
-.pokemon-card {
-    background-color: #ffffff; /* White background for Pokémon cards */
-    border: 1px solid #e0e0e0; /* Frontière légèrement colorée */
-    border-radius: 10px; /* Rounded corners for cards */
+#pokemon-id {
     padding: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(0, 0, 0, 0.06); /* Ombres plus douces */
-    text-align: center; /* Center text inside cards */
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; /* Smooth hover effects */
+    font-size: 1em;
+    border-radius: 10px;
+    border: 2px solid #3b4cca;
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
 }
 
-.pokemon-card:hover {
-    transform: scale(1.05); /* Slightly enlarge the card on hover */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
-    border-color: #ffcb05; /* Changement de couleur de bordure pour accentuer */
-}
-
-.pokemon-card:hover img {
-    transform: scale(1.1); /* Zoom léger sur l'image */
-}
-
-.pokemon-card:active {
-    transform: scale(0.98); /* Effet de réduction pour simuler un "clic" */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Ombre plus forte pour le clic */
-}
-
-/* Button styling */
-.btn {
-    background-color: #ffcb05; /* Couleur jaune vive pour attirer l'attention */
-    color: #333;
+#fetch-pokemon {
+    background-color: #ff0000; /* Rouge inspiré de la Pokéball */
+    color: white;
     padding: 10px 20px;
-    border-radius: 20px; /* Coins arrondis */
-    text-transform: uppercase; /* Texte en majuscules pour un style moderne */
+    font-size: 1.2em;
     font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
     transition: background-color 0.3s ease;
 }
 
-.btn:hover {
-    background-color: #3b4cca; /* Changement de couleur pour l'interaction */
-    color: #fff;
+#fetch-pokemon:hover {
+    background-color: #cc0000; /* Rouge plus foncé au survol */
 }
 
-/* Description box styling */
-.pokemon-description {
-    display: none; /* Hide description by default */
-    background-color: rgba(0, 0, 0, 0.8); /* Darker background for better contrast */
-    color: #fff; /* White text for readability */
-    padding: 20px; /* Adjust padding for better appearance */
-    border-radius: 10px; /* Rounded corners for description */
-    font-size: 16px; /* Larger font size for readability */
-    text-align: left;
-    max-width: 600px; /* Increase max-width for larger descriptions */
-    position: fixed; /* Fix to viewport */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Center the description box */
-    z-index: 2; /* Ensure it’s on top of other elements */
-    overflow: auto; /* Allow scrolling if content overflows */
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.4s ease, visibility 0s linear 0.4s;
+/* Style de la zone d'information Pokémon */
+#pokemon-info {
+    margin-top: 20px;
+    text-align: center;
 }
- .pokemon-item {
-            width: 200px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 10px;
-            margin: 10px;
-            text-align: center;
-            position: relative;
-        }
 
+#pokemon-name {
+    font-size: 2em;
+    color: #3b4cca; /* Bleu Pokémon */
+    text-transform: capitalize;
+    margin: 20px 0;
+}
 
-        #pokemon-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
-            padding: 20px;
+#pokemon-image {
+    width: 200px;
+    height: 200px;
+    border: 5px solid #ffcb05; /* Bordure jaune pour l'image */
+    border-radius: 50%;
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
 
-.pokemon-description.show {
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 0.4s ease;
+#pokemon-description, #pokemon-characteristic {
+    font-size: 1.2em;
+    color: #333;
+    margin-top: 15px;
+    background-color: #f8f9fa; /* Légère couleur pour mettre en avant */
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+/* Footer styling */
+footer {
+    margin-top: 40px;
+    color: #777;
+    font-size: 0.8em;
 }
